@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface ApiService {
-    @GET("echo")
-    Flowable<ApiResponse> getData(@Query("user_content_key") String key);
+    @GET("AKfycbwbDoptVa-rhpVvnLNGpziq3Ey4-SfjEj152elQ6oUUsYT5BL1s/exec?action=read")
+    Flowable<ApiResponse> getData();
 }
