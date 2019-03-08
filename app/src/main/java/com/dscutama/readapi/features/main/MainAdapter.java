@@ -1,6 +1,7 @@
 package com.dscutama.readapi.features.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.dscutama.readapi.R;
 import com.dscutama.readapi.data.model.response.Record;
+import com.dscutama.readapi.features.detail.DetailActivity;
 
 import java.util.List;
 
@@ -52,6 +54,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txt_name);
+            itemView.setOnClickListener(v->{
+                int position = getAdapterPosition();
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("user", list.get(position));
+
+                context.startActivity(intent);
+            });
         }
 
         void bind(Record record){
